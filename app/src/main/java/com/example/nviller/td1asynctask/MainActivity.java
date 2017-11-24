@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected Bitmap doInBackground(String... stringUrl) {
 
-            //Log.i(this.getClass().getCanonicalName(), "Entre doInBackground");
+            Log.i(this.getClass().getCanonicalName(), "Entre doInBackground");
 
             InputStream input = null;
             HttpURLConnection connection = null;
@@ -105,25 +105,25 @@ public class MainActivity extends AppCompatActivity {
                 bitmap = BitmapFactory.decodeStream(input);
 
             } catch (Exception e) {
-                //Log.e(this.getClass().getCanonicalName(), "Erreur lors de la création de l'image");
+                Log.e(this.getClass().getCanonicalName(), "Erreur lors de la création de l'image");
             } finally {
                 try {
                     if (input != null)
                         input.close();
                 } catch (IOException ignored) {
-                    //Log.e(this.getClass().getCanonicalName(), "Erreur input");
+                    Log.e(this.getClass().getCanonicalName(), "Erreur input");
                 }
                 if (connection != null)
                     connection.disconnect();
             }
-           // Log.i(this.getClass().getCanonicalName(), "Quitte doInBackground");
+            Log.i(this.getClass().getCanonicalName(), "Quitte doInBackground");
             return bitmap;
         }
 
         @Override
         protected void onPostExecute(Bitmap bitmap) {
 
-           // Log.i(this.getClass().getCanonicalName(), "Entre onPostExecute");
+           Log.i(this.getClass().getCanonicalName(), "Entre onPostExecute");
         }
     }
 
